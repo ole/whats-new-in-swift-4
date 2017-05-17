@@ -32,13 +32,15 @@ let hand = [Card(suit: .clubs, rank: .ace), Card(suit: .hearts, rank: .queen)]
  Once you have a `Codable` value, you need to pass it to an encoder in order to serialize it.
  
  Youʼll be able to write your own encoders and decoders that make use of the `Codable` infrastructure, but Swift will come with a built-in set of encoders and decoders for JSON (`JSONEncoder` and `JSONDecoder`) and property lists (`PropertyListEncoder` and `PropertyListDecoder`). These are defined in [SE-0167][SE-0167]. `NSKeyedArchiver` will also support all `Codable` types.
+ 
+ SE-0167 is not fully implemented yet, so itʼs no surprise that the encoders crash in the toolchain I tested.
 
  [SE-0167]: https://github.com/apple/swift-evolution/blob/master/proposals/0167-swift-encoders.md "Swift Evolution Proposal SE-0167: Swift Encoders"
  */
 import Foundation
 
 var encoder = JSONEncoder()
-// This should work but causes a crash (EXC_BAD_INSTRUCTION) in the snapshot I tested it with.
+// This causes a crash (EXC_BAD_INSTRUCTION) in the toolchain I tested.
 //let jsonData = try encoder.encode(hand)
 //String(data: jsonData, encoding: .utf8)
 
@@ -46,7 +48,7 @@ var encoder = JSONEncoder()
  ### Decoding
  */
 let decoder = JSONDecoder()
-// This should work but causes a crash (EXC_BAD_INSTRUCTION) in the snapshot I tested it with.
+// This causes a crash (EXC_BAD_INSTRUCTION) in the toolchain I tested.
 //let decoded = try decoder.decode([Card].self, from: jsonData)
 
 /*: [Table of contents](Table%20of%20contents) • [Previous page](@previous) • [Next page](@next) */
