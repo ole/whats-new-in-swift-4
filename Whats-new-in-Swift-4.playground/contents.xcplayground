@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='macos' display-mode='rendered'>
+    <pages>
+        <page name='Table of contents'/>
+        <page name='One-sided ranges'/>
+        <page name='Strings'/>
+        <page name='private in same-file extensions'/>
+        <page name='Key paths'/>
+        <page name='Encoding and decoding'/>
+        <page name='NSNumber bridging'/>
+        <page name='Generic subscripts'/>
+        <page name='Class and subtype existentials'/>
+        <page name='Dictionary and Set enhancements'/>
+        <page name='swapAt'/>
+    </pages>
+</playground>
