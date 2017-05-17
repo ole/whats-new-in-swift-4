@@ -1,7 +1,7 @@
 /*:
  # Whatʼs new in Swift 4
  
- By [Ole Begemann][Ole Begemann] • May 2016
+ By [Ole Begemann][Ole Begemann] • May 2017
  
  [Ole Begemann]: https://oleb.net
  
