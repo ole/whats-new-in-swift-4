@@ -7,10 +7,10 @@
         <page name='private in same-file extensions'/>
         <page name='Key paths'/>
         <page name='Encoding and decoding'/>
-        <page name='NSNumber bridging'/>
-        <page name='Generic subscripts'/>
-        <page name='Class and subtype existentials'/>
         <page name='Dictionary and Set enhancements'/>
         <page name='swapAt'/>
+        <page name='Generic subscripts'/>
+        <page name='NSNumber bridging'/>
+        <page name='Class and subtype existentials'/>
     </pages>
 </playground>

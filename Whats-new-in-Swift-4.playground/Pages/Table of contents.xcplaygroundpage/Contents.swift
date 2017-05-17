@@ -13,11 +13,11 @@
  1. [Private declarations visible in same-file extensions](private%20in%20same-file%20extensions)
  1. [Key paths](Key%20paths)
  1. [Encoding and decoding](Encoding%20and%20decoding)
- 1. [`NSNumber` bridging](NSNumber%20bridging)
- 1. [Generic subscripts](Generic%20subscripts)
- 1. [Class and subtype existentials](Class%20and%20subtype%20existentials)
  1. [`Dictionary` and `Set` enhancements](Dictionary%20and%20Set%20enhancements)
  1. [`MutableCollection.swapAt` method](swapAt)
+ 1. [Generic subscripts](Generic%20subscripts)
+ 1. [`NSNumber` bridging](NSNumber%20bridging)
+ 1. [Class and subtype existentials](Class%20and%20subtype%20existentials)
 
  ## Instructions
 
