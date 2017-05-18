@@ -3,9 +3,9 @@
 
  ## Archival and serialization
 
- [SE-0166: Swift Archival & Serialization][SE-0166] defines a way to archive and serialize any Swift value (classes, structs, and enums). Types can make themselves (un-)archivable by conforming to the `Codable` protocol.
+ [SE-0166: Swift Archival & Serialization][SE-0166] defines a way for any Swift type (classes, structs, and enums) to describe how to archive and serialize itself. Types can make themselves (un-)archivable by conforming to the `Codable` protocol.
  
- In many cases this is all you have to do because the compiler can generate a default implementation if all members of your types are themselves `Codable`. If you need to customize how your type encodes itself, you can also override the default behavior. There is a lot to this topic — be sure to read the proposal for details.
+ In many cases adding the `Codable` conformance will be all you have to do for your custom types because the compiler can generate a default implementation if all of the typesʼ members are themselves `Codable`. You can also override the default behavior if you need to customize how your type encodes itself. There is a lot to this topic — make sure to read the proposal for details.
  
  [SE-0166]: https://github.com/apple/swift-evolution/blob/master/proposals/0166-swift-archival-serialization.md "Swift Evolution Proposal SE-0166: Swift Archival & Serialization"
 
@@ -29,9 +29,9 @@ let hand = [Card(suit: .clubs, rank: .ace), Card(suit: .hearts, rank: .queen)]
 /*:
  ### Encoding
  
- Once you have a `Codable` value, you need to pass it to an encoder in order to serialize it.
+ Once you have a `Codable` value, you need to pass it to an encoder in order to archive it.
  
- Youʼll be able to write your own encoders and decoders that make use of the `Codable` infrastructure, but Swift will come with a built-in set of encoders and decoders for JSON (`JSONEncoder` and `JSONDecoder`) and property lists (`PropertyListEncoder` and `PropertyListDecoder`). These are defined in [SE-0167][SE-0167]. `NSKeyedArchiver` will also support all `Codable` types.
+ Youʼll be able to write your own encoders and decoders that make use of the `Codable` infrastructure, but Swift will also come with a built-in set of encoders and decoders for JSON (`JSONEncoder` and `JSONDecoder`) and property lists (`PropertyListEncoder` and `PropertyListDecoder`). These are defined in [SE-0167][SE-0167]. `NSKeyedArchiver` will also support all `Codable` types.
  
  SE-0167 is not fully implemented yet, so itʼs no surprise that the encoders crash in the toolchain I tested.
 
@@ -40,6 +40,14 @@ let hand = [Card(suit: .clubs, rank: .ace), Card(suit: .hearts, rank: .queen)]
 import Foundation
 
 var encoder = JSONEncoder()
+
+// Properties offered by JSONEncoder to customize output
+encoder.dataEncodingStrategy
+encoder.dateEncodingStrategy
+encoder.nonConformingFloatEncodingStrategy
+encoder.outputFormatting
+encoder.userInfo
+
 // This causes a crash (EXC_BAD_INSTRUCTION) in the toolchain I tested.
 //let jsonData = try encoder.encode(hand)
 //String(data: jsonData, encoding: .utf8)

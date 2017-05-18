@@ -3,7 +3,7 @@
 
  ## `MutableCollection.swapAt` method
 
- [SE-0173][SE-0173] introduces a new method for swapping two elements of a `MutableCollection`. Unlike the existing `swap(_:_:)` function, `swapAt(_:_:)` takes two indices in place of the `inout` values to be swapped.
+ [SE-0173][SE-0173] introduces a new method for swapping two elements in a collection. Unlike the existing `swap(_:_:)` function, `swapAt(_:_:)` takes the indices of the elements to be swapped, not the elements themselves (via `inout` arguments).
  
  The reason for this addition is that `swap` with two `inout` arguments is incompatible with the new exclusive memory access rules proposed in [SE-0176][SE-0176]. The existing `swap(_:_:)` function will no longer work for swapping two elements of the same collection.
 

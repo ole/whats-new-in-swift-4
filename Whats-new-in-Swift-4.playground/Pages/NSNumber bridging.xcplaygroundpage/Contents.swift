@@ -10,7 +10,6 @@
 import Foundation
 
 let n = NSNumber(value: UInt32(543))
-// nil in Swift 4. This would be 31 in Swift 3.
-let v = n as? Int8
+let v = n as? Int8 // nil in Swift 4. This would be 31 in Swift 3 (try it!).
 
 /*: [Table of contents](Table%20of%20contents) • [Previous page](@previous) • [Next page](@next) */

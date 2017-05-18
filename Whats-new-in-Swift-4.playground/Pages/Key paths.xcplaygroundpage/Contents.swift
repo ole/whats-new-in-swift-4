@@ -3,7 +3,7 @@
 
  ## Smart key paths
 
- Probably one of the headline features of Swift 4 is the new key paths model key paths ([SE-0161][SE-0161]). Unlike the string-based key paths in Cocoa, Swift key paths are strongly typed.
+ Probably one of the headline features of Swift 4 is the new key paths model described in [SE-0161][SE-0161]. Unlike the string-based key paths in Cocoa, Swift key paths are strongly typed.
 
  [SE-0161]: https://github.com/apple/swift-evolution/blob/master/proposals/0161-key-paths.md "Swift Evolution Proposal SE-0161: Smart KeyPaths: Better Key-Value Coding for Swift"
  */
@@ -26,16 +26,19 @@ let sicp = Book(title: "Structure and Interpretation of Computer Programs", auth
 /*:
  Key paths are formed by starting at a root type and drilling down any combination of property and subscript names.
  
- You write a key path by starting with a backslash: `\Book.title`. Every type automatically gets a `[keyPath: …]` subscript to get or set the value at the key path.
+ You write a key path by starting with a backslash: `\Book.title`. Every type automatically gets a `[keyPath: …]` subscript to get or set the value at the specified key path.
  */
 sicp[keyPath: \Book.title]
+// Key paths can to drill down and work for computed properties
 sicp[keyPath: \Book.primaryAuthor.name]
 
 /*:
- Key paths are objects that can be stored and manipulated.
+ Key paths are objects that can be stored and manipulated. For example, you can append additional segments to a key path to drill down further.
  */
-let keyPath = \Book.primaryAuthor.name
-type(of: keyPath)
+let authorKeyPath = \Book.primaryAuthor
+type(of: authorKeyPath)
+let nameKeyPath = authorKeyPath.appending(path: \.name) // you can omit the type name if the compiler can infer it
+sicp[keyPath: nameKeyPath]
 
 /*:
  ### Key paths for subscripts

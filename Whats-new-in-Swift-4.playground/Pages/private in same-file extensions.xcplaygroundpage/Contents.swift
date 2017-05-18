@@ -22,8 +22,8 @@ extension SortedArray {
     }
 }
 
-// storage is _not_ visible here (unlike fileprivate)
 let array = SortedArray(unsorted: [3,1,2])
+// storage is _not_ visible here (unlike fileprivate)
 //array.storage // error: 'storage' is inaccessible due to 'private' protection level
 
 /*: [Table of contents](Table%20of%20contents) • [Previous page](@previous) • [Next page](@next) */

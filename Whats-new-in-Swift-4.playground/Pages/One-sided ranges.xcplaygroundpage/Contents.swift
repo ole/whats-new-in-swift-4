@@ -17,11 +17,10 @@ Array(numberedLetters)
 /*:
  ### Collection subscripts
  
- When used in a collection subscript, the collectionʼs `startIndex` or `endIndex` “fills in” the missing lower or upper bound, respectively.
+ When you use a one-sided range in a collection subscript, the collectionʼs `startIndex` or `endIndex` “fills in” the missing lower or upper bound, respectively.
  */
 let numbers = [1,2,3,4,5,6,7,8,9,10]
-// Instead of numbers[5..<numbers.endIndex]
-numbers[5...]
+numbers[5...] // instead of numbers[5..<numbers.endIndex]
 
 /*:
  ### Pattern Matching
