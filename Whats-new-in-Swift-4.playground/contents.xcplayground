@@ -9,6 +9,7 @@
         <page name='Encoding and decoding'/>
         <page name='Dictionary and Set enhancements'/>
         <page name='swapAt'/>
+        <page name='reduce with inout'/>
         <page name='Generic subscripts'/>
         <page name='NSNumber bridging'/>
         <page name='Class and subtype existentials'/>
