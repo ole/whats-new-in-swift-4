@@ -32,6 +32,8 @@ let hand = [Card(suit: .clubs, rank: .ace), Card(suit: .hearts, rank: .queen)]
  Once you have a `Codable` value, you need to pass it to an encoder in order to archive it.
  
  Youʼll be able to write your own encoders and decoders that make use of the `Codable` infrastructure, but Swift will also come with a built-in set of encoders and decoders for JSON (`JSONEncoder` and `JSONDecoder`) and property lists (`PropertyListEncoder` and `PropertyListDecoder`). These are defined in [SE-0167][SE-0167]. `NSKeyedArchiver` will also support all `Codable` types.
+
+ [SE-0167]: https://github.com/apple/swift-evolution/blob/master/proposals/0167-swift-encoders.md "Swift Evolution Proposal SE-0167: Swift Encoders"
  */
 import Foundation
 
