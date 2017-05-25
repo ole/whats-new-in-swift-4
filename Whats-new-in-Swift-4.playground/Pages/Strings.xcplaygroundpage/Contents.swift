@@ -48,15 +48,14 @@ print(substring.uppercased())
 /*:
  ### Unicode 9
  
- Swift 4 will support Unicode 9, fixing [some problems with proper grapheme clustering for modern emoji][Emoji 4.0]. This change [seems to be implemented][Unicode 9 PR], but it was not yet in the 4.0 snapshot when I last checked. All the character counts below should be `1`:
+ Swift 4 will support Unicode 9, fixing [some problems with proper grapheme clustering for modern emoji][Emoji 4.0]. All the character counts below are `1`:
 
  [Emoji 4.0]: https://oleb.net/blog/2016/12/emoji-4-0/
- [Unicode 9 PR]: https://github.com/apple/swift/pull/9265
  */
-"👧🏽".count // → 2 ❌ (person + skin tone)
-"👨‍👩‍👧‍👦".count // → 4 ❌ (family with four members)
-"👱🏾\u{200D}👩🏽\u{200D}👧🏿\u{200D}👦🏻".count // → 8 ❌ (family + skin tones)
-"👩🏻‍🚒".count // → 3 ❌ (person + skin tone + profession)
+"👧🏽".count // person + skin tone
+"👨‍👩‍👧‍👦".count // family with four members
+"👱🏾\u{200D}👩🏽\u{200D}👧🏿\u{200D}👦🏻".count // family + skin tones
+"👩🏻‍🚒".count // person + skin tone + profession
 
 /*:
  ### `Character.unicodeScalars` property
@@ -65,8 +64,7 @@ print(substring.uppercased())
 
  [SE-0178]: https://github.com/apple/swift-evolution/blob/master/proposals/0178-character-unicode-view.md "Swift Evolution Proposal SE-0178: Add `unicodeScalars` property to `Character`"
  */
-// Not yet implemented in the snapshot I tested
 let c: Character = "🇪🇺"
-//Array(c.unicodeScalars)
+Array(c.unicodeScalars)
 
 /*: [Table of contents](Table%20of%20contents) • [Previous page](@previous) • [Next page](@next) */
