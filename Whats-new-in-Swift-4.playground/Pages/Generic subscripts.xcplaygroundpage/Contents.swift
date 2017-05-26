@@ -34,7 +34,7 @@ let population: Int? = json["population"]
  Another example: a subscript on `Collection` that takes a generic sequence of indices and returns an array of the values at these indices:
  */
 extension Collection {
-    subscript<Indices: Sequence>(indices indices: Indices) -> [Iterator.Element] where Indices.Iterator.Element == Index {
+    subscript<Indices: Sequence>(indices indices: Indices) -> [Element] where Indices.Element == Index {
         var result: [Element] = []
         for index in indices {
             result.append(self[index])

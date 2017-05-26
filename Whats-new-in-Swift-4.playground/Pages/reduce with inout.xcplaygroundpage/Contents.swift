@@ -10,9 +10,9 @@
  SE-0171 is not implemented yet.
  */
 // Not implemented yet
-//extension Sequence where Iterator.Element: Equatable {
-//    func uniq() -> [Iterator.Element] {
-//        return reduce(into: []) { (result: inout [Iterator.Element], element) in
+//extension Sequence where Element: Equatable {
+//    func uniq() -> [Element] {
+//        return reduce(into: []) { (result: inout [Element], element) in
 //            if result.last != element {
 //                result.append(element)
 //            }
