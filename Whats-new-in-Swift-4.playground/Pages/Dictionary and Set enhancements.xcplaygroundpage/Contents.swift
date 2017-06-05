@@ -27,7 +27,7 @@ letters
 let defaults = ["foo": false, "bar": false, "baz": false]
 var options = ["foo": true, "bar": false]
 // This gives me an annoying type checker error: error: generic parameter 'S' could not be inferred
-// I believe this is related to https://bugs.swift.org/browse/SR-922
+// I believe this is related to https://bugs.swift.org/browse/SR-922 adn https://bugs.swift.org/browse/SR-4969
 //options.merge(defaults) { (old, _) in old }
 
 /*:

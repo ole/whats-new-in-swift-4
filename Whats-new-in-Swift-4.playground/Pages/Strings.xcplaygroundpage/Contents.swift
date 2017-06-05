@@ -60,7 +60,7 @@ print(substring.uppercased())
 /*:
  ### `Character.unicodeScalars` property
  
- You can now access the code points of a `Character` directly without having to convert it to a `String` first ([SE-0178][SE-0178]).
+ You can now access the code points of a `Character` directly without having to convert it to a `String` first ([SE-0178][SE-0178]):
 
  [SE-0178]: https://github.com/apple/swift-evolution/blob/master/proposals/0178-character-unicode-view.md "Swift Evolution Proposal SE-0178: Add `unicodeScalars` property to `Character`"
  */
