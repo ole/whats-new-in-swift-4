@@ -38,7 +38,7 @@ for char in greeting {
 /*:
  ### `Substring` is the new type for string slices
 
- String slices are now instances of type `Substring`. Both `String` and `Substring` conform to `StringProtocol`. Almost the entire string API will live in `StringProtocol` so that `String` and `StringProtocol` behave largely the same.
+ String slices are now instances of type `Substring`. Both `String` and `Substring` conform to `StringProtocol`. Almost the entire string API will live in `StringProtocol` so that `String` and `Substring` behave largely the same.
  */
 let comma = greeting.index(of: ",")!
 let substring = greeting[..<comma]
