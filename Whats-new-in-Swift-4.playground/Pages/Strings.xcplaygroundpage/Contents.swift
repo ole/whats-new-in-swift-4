@@ -9,7 +9,7 @@
  
  [SE-0168]: https://github.com/apple/swift-evolution/blob/master/proposals/0168-multi-line-string-literals.md "Swift Evolution Proposal SE-0168: Multi-Line String Literals"
  */
-    let multilineString = """
+let multilineString = """
     This is a multi-line string.
     You don't have to escape "quotes" in here.
     The position of the closing delimiter
