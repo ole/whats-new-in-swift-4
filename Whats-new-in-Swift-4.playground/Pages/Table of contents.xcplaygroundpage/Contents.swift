@@ -21,7 +21,7 @@
  1. [`reduce` with `inout`](reduce%20with%20inout)
  1. [Generic subscripts](Generic%20subscripts)
  1. [`NSNumber` bridging](NSNumber%20bridging)
- 1. [Class and subtype existentials](Class%20and%20subtype%20existentials)
+ 1. [Composing classes and protocols](Composing%20classes%20and%20protocols)
 
  ## Instructions
 

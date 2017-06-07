@@ -13,6 +13,6 @@
         <page name='reduce with inout'/>
         <page name='Generic subscripts'/>
         <page name='NSNumber bridging'/>
-        <page name='Class and subtype existentials'/>
+        <page name='Composing classes and protocols'/>
     </pages>
 </playground>
