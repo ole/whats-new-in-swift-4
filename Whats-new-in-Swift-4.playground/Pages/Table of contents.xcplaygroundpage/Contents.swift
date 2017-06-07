@@ -25,8 +25,8 @@
 
  ## Instructions
 
- This playground requires Swift 4. To run it in Xcode 8.3 (before Xcode 9 becomes available):
- 
+ This playground requires Swift 4. Xcode 9 includes Swift 4 by default ([download Xcode 9 beta from developer.apple.com][Xcode 9]). You can also run it in Xcode 8.3, but you need to install a Swift 4 toolchain (donʼt worry, itʼs easy):
+
  1. Download [the latest Swift 4.0 snapshot from swift.org][Snapshot downloads].
  1. Run the installer to install the snapshot.
  1. In Xcode, go to _Xcode > Toolchains > Manage Toolchains…_ and select the snapshot:
@@ -37,6 +37,7 @@
  
     If you want to switch between multiple Swift versions on the command line (e.g. to play with Swift 4 in the REPL or to build Swift packages with Swift 4, I recommend Kyle Fullerʼs excellent [swiftenv][swiftenv].
  
+ [Xcode 9]: https://developer.apple.com/download/
  [Snapshot downloads]: https://swift.org/download/#snapshots
  [xcode-8-3-toolchain-dialog]: xcode-8-3-toolchain-dialog.png
  [swiftenv]: https://swiftenv.fuller.li/
