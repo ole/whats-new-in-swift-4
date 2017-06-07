@@ -48,7 +48,7 @@ print(substring.uppercased())
 /*:
  ### Unicode 9
  
- Swift 4 will support Unicode 9, fixing [some problems with proper grapheme clustering for modern emoji][Emoji 4.0]. All the character counts below are `1`:
+ Swift 4 will support Unicode 9, fixing [some problems with proper grapheme clustering for modern emoji][Emoji 4.0]. All the character counts below are now `1`, as they should be:
 
  [Emoji 4.0]: https://oleb.net/blog/2016/12/emoji-4-0/
  */
