@@ -7,7 +7,7 @@
         <page name='private in same-file extensions'/>
         <page name='Key paths'/>
         <page name='Encoding and decoding'/>
-        <page name='Sequence.Element'/>
+        <page name='Associated type constraints'/>
         <page name='Dictionary and Set enhancements'/>
         <page name='swapAt'/>
         <page name='reduce with inout'/>

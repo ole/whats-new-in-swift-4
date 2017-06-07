@@ -15,7 +15,7 @@
  1. [Private declarations visible in same-file extensions](private%20in%20same-file%20extensions)
  1. [Key paths](Key%20paths)
  1. [Encoding and decoding](Encoding%20and%20decoding)
- 1. [`Sequence.Element`](Sequence.Element)
+ 1. [Associated type constraints](Associated%20type%20constraints)
  1. [`Dictionary` and `Set` enhancements](Dictionary%20and%20Set%20enhancements)
  1. [`MutableCollection.swapAt` method](swapAt)
  1. [`reduce` with `inout`](reduce%20with%20inout)
