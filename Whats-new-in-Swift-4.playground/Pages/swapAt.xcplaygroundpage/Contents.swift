@@ -13,8 +13,9 @@
 var numbers = [1,2,3,4,5]
 numbers.swapAt(0,1)
 
-// Will be illegal in Swift 4 (not implemented yet)
-swap(&numbers[3], &numbers[4])
+// illegal in Swift 4 (since at least 4.0-DEVELOPMENT-SNAPSHOT-2017-06-06-a)
+// error: simultaneous accesses to var 'numbers', but modification requires exclusive access; consider copying to a local variable
+// swap(&numbers[3], &numbers[4])
 numbers
 
 /*: [Table of contents](Table%20of%20contents) • [Previous page](@previous) • [Next page](@next) */
