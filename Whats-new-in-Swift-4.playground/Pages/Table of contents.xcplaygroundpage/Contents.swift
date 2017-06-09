@@ -3,7 +3,7 @@
  
  By [Ole Begemann][Ole Begemann] • May 2017
  
- Latest toolchain tested: **Swift 4.0 Development from June 2, 2017.**
+ Latest toolchain tested: **Swift 4.0 Development from June 7, 2017.**
  
  [Ole Begemann]: https://oleb.net
  
