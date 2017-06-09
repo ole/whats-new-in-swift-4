@@ -11,11 +11,13 @@
  [SE-0176]: https://github.com/apple/swift-evolution/blob/master/proposals/0176-enforce-exclusive-access-to-memory.md "Swift Evolution Proposal SE-0176: Enforce Exclusive Access to Memory"
  */
 var numbers = [1,2,3,4,5]
-numbers.swapAt(0,1)
 
-// illegal in Swift 4 (since at least 4.0-DEVELOPMENT-SNAPSHOT-2017-06-06-a)
+// Illegal in Swift 4:
 // error: simultaneous accesses to var 'numbers', but modification requires exclusive access; consider copying to a local variable
-// swap(&numbers[3], &numbers[4])
-numbers
+//swap(&numbers[3], &numbers[4])
+//numbers
 
+// This is the new way to do this:
+numbers.swapAt(0,1)
+numbers
 /*: [Table of contents](Table%20of%20contents) • [Previous page](@previous) • [Next page](@next) */
