@@ -31,7 +31,7 @@ extension Sequence where Element: Numeric {
 //    SubSequence: Sequence,
 //    SubSequence.Iterator.Element == Iterator.Element
 //
-// In Swift 4, two of the threee constraints are already known to the compiler because they can be expressed in the type system using where clauses for associated types.
+// In Swift 4, two of the three constraints are already known to the compiler because they can be expressed in the type system using where clauses for associated types.
 extension Sequence where Element: Equatable {
     func headMirrorsTail(_ n: Int) -> Bool {
         let head = prefix(n)
