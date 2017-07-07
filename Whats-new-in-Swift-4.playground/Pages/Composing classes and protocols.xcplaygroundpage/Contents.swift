@@ -16,7 +16,7 @@ class ViewController: NSViewController {
 
     init(header: NSView & HeaderView) {
         self.header = header
-        super.init(nibName: nil, bundle: nil)!
+        super.init(nibName: nil, bundle: nil)
     }
 
     required init(coder decoder: NSCoder) {
