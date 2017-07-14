@@ -21,6 +21,7 @@
  1. [`reduce` with `inout`](reduce%20with%20inout)
  1. [Generic subscripts](Generic%20subscripts)
  1. [`NSNumber` bridging](NSNumber%20bridging)
+ 1. [`Limiting @objc inference`](Limiting%20@objc%20inference)
  1. [Composing classes and protocols](Composing%20classes%20and%20protocols)
 
  ## Instructions
