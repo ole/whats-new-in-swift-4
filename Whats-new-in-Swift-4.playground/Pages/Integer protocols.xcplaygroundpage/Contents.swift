@@ -13,6 +13,8 @@
 
  This might look a little intimidating, but the most important thing to take away from this is that you don’t have to care about all the protocols. Just use the integer types you’re familiar with, such as `Int` and `UInt8`, as you always have and you’ll be absolutely fine. The new protocols only come into play once you want to write generic algorithms that work on multiple numeric types.
 
+ For a library that takes advantage of the new protocols, check out [NumericAnnex](https://github.com/xwu/NumericAnnex) by Xiaodi Wu.
+
  ### Heterogeneous comparison operators
 
  You can now compare an `Int` to an `UInt` without explicit conversion, thanks to new generic overloads for these functions in the standard library.
