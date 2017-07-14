@@ -78,4 +78,39 @@ type(of: newString)
 let c: Character = "🇪🇺"
 Array(c.unicodeScalars)
 
+/*:
+ ### Converting between `Range<String.Index>` and `NSRange`
+
+ Foundation comes with new initializers on `NSRange` and `Range<String.Index>` to convert between the two, removing the need to manually compute UTF-16 offsets. This makes it easier to use APIs that still work on `NSRange`s, such as `NSRegularExpression` and `NSAttributedString`.
+ */
+// Given a String range
+let string = "Hello 👩🏽‍🌾👨🏼‍🚒💃🏾"
+let index = string.index(of: Character("👩🏽‍🌾"))!
+let range = index...
+
+// Convert the String range to an NSRange
+import Foundation
+
+let nsRange = NSRange(range, in: string)
+nsRange.length // length in UTF-16 code units
+string[range].count // length in Characters
+assert(nsRange.length == string[range].utf16.count)
+
+// Use the NSRange to format an attributed string
+import AppKit
+
+let formatted = NSMutableAttributedString(string: string, attributes: [.font: NSFont.systemFont(ofSize: 14)])
+formatted.addAttribute(.font, value: NSFont.systemFont(ofSize: 48), range: nsRange)
+
+// NSAttributedString APIs return NSRange
+let lastCharacterIndex = string.index(before: string.endIndex)
+let lastCharacterNSRange = NSRange(lastCharacterIndex..., in: string)
+var attributesNSRange = NSRange()
+_ = formatted.attributes(at: lastCharacterNSRange.location, longestEffectiveRange: &attributesNSRange, in: nsRange)
+attributesNSRange
+
+// Convert the NSRange back to Range<String.Index> to use it with String
+let attributesRange = Range(attributesNSRange, in: string)!
+string[attributesRange]
+
 /*: [Table of contents](Table%20of%20contents) • [Previous page](@previous) • [Next page](@next) */
