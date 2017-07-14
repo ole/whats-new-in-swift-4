@@ -7,7 +7,7 @@
  
  [SE-0148]: https://github.com/apple/swift-evolution/blob/master/proposals/0148-generic-subscripts.md "Swift Evolution Proposal SE-0148: Generic Subscripts"
  
- The canonical example is a type that represents JSON data: you can define a generic subscript to have the callerʼs context define the expected return type.
+ The canonical example is a type that represents JSON data: you can define a generic subscript to have the caller’s context define the expected return type.
  */
 struct JSON {
     fileprivate var storage: [String:Any]

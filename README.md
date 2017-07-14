@@ -1,10 +1,10 @@
-# Whatʼs new in Swift 4
+# What’s new in Swift 4
 
-An Xcode playground showcasing the new features in Swift 4.0. As seen in the [Whatʼs New in Swift session at WWDC 2017][WWDC 2017 402].
+An Xcode playground showcasing the new features in Swift 4.0. As seen in the [What’s New in Swift session at WWDC 2017][WWDC 2017 402].
 
 Written by [Ole Begemann][Ole Begemann], May 2017.
 
-The playground requires Swift 4. Xcode 9 includes Swift 4 by default ([download Xcode 9 beta from developer.apple.com][Xcode 9]). You can also run it in Xcode 8.3, but you need to install [the latest Swift 4.0 snapshot from swift.org][Snapshot downloads] (donʼt worry, itʼs easy).
+The playground requires Swift 4. Xcode 9 includes Swift 4 by default ([download Xcode 9 beta from developer.apple.com][Xcode 9]). You can also run it in Xcode 8.3, but you need to install [the latest Swift 4.0 snapshot from swift.org][Snapshot downloads] (don’t worry, it’s easy).
 
 ![Screenshot of the playground in Xcode 8.3][Playground screenshot]
 

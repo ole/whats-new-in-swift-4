@@ -15,7 +15,6 @@ var numbers = [1,2,3,4,5]
 // Illegal in Swift 4:
 // error: simultaneous accesses to var 'numbers', but modification requires exclusive access; consider copying to a local variable
 //swap(&numbers[3], &numbers[4])
-//numbers
 
 // This is the new way to do this:
 numbers.swapAt(0,1)

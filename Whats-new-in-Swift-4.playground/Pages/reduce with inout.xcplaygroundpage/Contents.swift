@@ -11,7 +11,7 @@
  */
 // Not implemented yet
 //extension Sequence where Element: Equatable {
-//    func uniq() -> [Element] {
+//    func removingConsecutiveDuplicates() -> [Element] {
 //        return reduce(into: []) { (result: inout [Element], element) in
 //            if result.last != element {
 //                result.append(element)

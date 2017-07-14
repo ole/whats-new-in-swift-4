@@ -9,7 +9,7 @@
  
  ### Infinite Sequences
  
- You can use a one-sided range to construct an infinite sequence, e.g. as a more flexible replacement for `enumerated()` when you donʼt want the numbering to start at zero:
+ You can use a one-sided range to construct an infinite sequence, e.g. as a more flexible replacement for `enumerated()` when you don’t want the numbering to start at zero:
  */
 let letters = ["a","b","c","d"]
 let numberedLetters = zip(1..., letters)
@@ -17,7 +17,7 @@ Array(numberedLetters)
 /*:
  ### Collection subscripts
  
- When you use a one-sided range in a collection subscript, the collectionʼs `startIndex` or `endIndex` “fills in” the missing lower or upper bound, respectively.
+ When you use a one-sided range for subscripting into a `Collection`, the collection’s `startIndex` or `endIndex` “fills in” the missing lower or upper bound, respectively.
  */
 let numbers = [1,2,3,4,5,6,7,8,9,10]
 numbers[5...] // instead of numbers[5..<numbers.endIndex]
@@ -25,7 +25,7 @@ numbers[5...] // instead of numbers[5..<numbers.endIndex]
 /*:
  ### Pattern Matching
  
- One-sided ranges can be used in pattern matching constructs, e.g. in a `case` expression in a `switch` statement. Notice that the compiler canʼt (yet?) determine that the `switch` is exhaustive, though.
+ One-sided ranges can be used in pattern matching constructs, e.g. in a `case` expression in a `switch` statement. Notice that the compiler can’t (yet?) determine that the `switch` is exhaustive, though.
  */
 let value = 5
 switch value {
@@ -38,4 +38,5 @@ case ..<0:
 default:
     fatalError("unreachable")
 }
+
 /*: [Table of contents](Table%20of%20contents) • [Previous page](@previous) • [Next page](@next) */

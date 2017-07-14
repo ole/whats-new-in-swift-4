@@ -19,22 +19,20 @@ dict[2]
  ### Merging initializer and `merge` method
  
  Specify how duplicate keys should be handled when creating a dictionary from a sequence or merging a sequence into an existing dictionary.
+
+ Merging initializer:
  */
 let duplicates = [("a", 1), ("b", 2), ("a", 3), ("b", 4)]
 let letters = Dictionary(duplicates, uniquingKeysWith: { (first, _) in first })
 letters
 
 /*:
- Using the merging initializer or the `merge` method is not as pleasant as it should be when the sequence youʼre merging in is another dictionary. Since the element type of a dictionary is a _labeled_ tuple of the form `(key: Key, value: Value)` and the new methods expect a sequence with an _unlabeled_ tuple element type `(Key, Value)`, you have to perform a manual conversion. I hope this gets fixed in a future build. See [SR-922](https://bugs.swift.org/browse/SR-922) and [SR-4969](https://bugs.swift.org/browse/SR-4969).
+ `merge` method:
  */
-let defaults = ["foo": false, "bar": false, "baz": false]
-var options = ["foo": true, "bar": false]
-// This produces an annoying type checker error: error: generic parameter 'S' could not be inferred
-//let mergedOptions = options.merge(defaults) { (old, _) in old }
-// You have to do this instead:
-options.merge(defaults.map { $0 }) { (old, _) in old }
+let defaults = ["darkUI": false, "energySaving": false, "smoothScrolling": false]
+var options = ["darkUI": true, "energySaving": false]
+options.merge(defaults) { (old, _) in old }
 options
-
 /*:
  ### Subscript with default value
  

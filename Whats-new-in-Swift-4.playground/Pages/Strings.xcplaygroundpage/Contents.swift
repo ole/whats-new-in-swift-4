@@ -5,7 +5,7 @@
 
  ### Multi-line string literals
 
- [SE-0168][SE-0168] introduces a simple syntax for multi-line string literals using triple quotes (`"""`). Inside a multi-line string literal, you donʼt need to escape single quotes, which means that most text formats (such as JSON or HTML) can be pasted in without any escaping. The indentation of the closing delimiter determines how much whitespace is stripped from the start of each line.
+ [SE-0168][SE-0168] introduces a simple syntax for multi-line string literals using three double-quotes (`"""`). Inside a multi-line string literal, you don’t need to escape a single double-quote, which means that most text formats (such as JSON or HTML) can be pasted in without any escaping. The indentation of the closing delimiter determines how much whitespace is stripped from the start of each line.
  
  [SE-0168]: https://github.com/apple/swift-evolution/blob/master/proposals/0168-multi-line-string-literals.md "Swift Evolution Proposal SE-0168: Multi-Line String Literals"
  */
@@ -18,15 +18,16 @@ let multilineString = """
 print(multilineString)
 
 /*:
- Activate the Console (_View > Debug Area > Activate Console_) to see the `print` output.
+ Activate Xcode’s Console (_View > Debug Area > Activate Console_) to see the `print` output.
 
  ### String is a `Collection` again
 
  [SE-0163][SE-0163] is the first part of the revised string model for Swift 4. The biggest change is that `String` is a `Collection` again (as it used to be in Swift 1.x), i.e. the functionality of `String.CharacterView` has been folded into the parent type. (The other views, `UnicodeScalarView`, `UTF8View`, and `UTF16View`, still exist.)
  
- Note that SE-0163 isnʼt fully implemented yet and there are likely more string-related proposals in the pipeline.
+ Note that SE-0163 isn’t fully implemented yet and there are a few more string-related proposals in the pipeline, such as an internal redesign of the `String.Index` type ([SE-0180][SE-0180]).
 
  [SE-0163]: https://github.com/apple/swift-evolution/blob/master/proposals/0163-string-revision-1.md "Swift Evolution Proposal SE-0163: String Revision: Collection Conformance, C Interop, Transcoding"
+ [SE-0180]: https://github.com/apple/swift-evolution/blob/master/proposals/0180-string-index-overhaul.md "Swift Evolution Proposal SE-0180: String Index Overhaul"
  */
 let greeting = "Hello, 😜!"
 // No need to drill down to .characters
@@ -43,19 +44,29 @@ for char in greeting {
 let comma = greeting.index(of: ",")!
 let substring = greeting[..<comma]
 type(of: substring)
-// String API can be called on Substring
+// Most String APIs can be called on Substring
 print(substring.uppercased())
+
+/*:
+ A `Substring` keeps the full `String` value it was created from alive. This can lead to accidental high memory usage when you pass a seemingly small `Substring` that holds on to a large `String` to other API. For this reason, most functions that take a string as an argument should continue to accept only `String` instances; you generally should not make such functions generic to accept any value conforming to `StringProtocol`.
+
+ To convert a `Substring` back to a `String`, use a `String()` initializer. This will copy the substring into a new buffer:
+ */
+let newString = String(substring)
+type(of: newString)
+
 /*:
  ### Unicode 9
  
- Swift 4 will support Unicode 9, fixing [some problems with proper grapheme clustering for modern emoji][Emoji 4.0]. All the character counts below are now `1`, as they should be:
+ Swift 4 supports Unicode 9, fixing [some problems with proper grapheme clustering for modern emoji][Emoji 4.0]. All the character counts below are now correct (they weren’t in Swift 3):
 
  [Emoji 4.0]: https://oleb.net/blog/2016/12/emoji-4-0/
  */
-"👧🏽".count // person + skin tone
-"👨‍👩‍👧‍👦".count // family with four members
-"👱🏾\u{200D}👩🏽\u{200D}👧🏿\u{200D}👦🏻".count // family + skin tones
-"👩🏻‍🚒".count // person + skin tone + profession
+"👧🏽".count // person + skin tone; in Swift 3: 2
+"👨‍👩‍👧‍👦".count // family with four members; in Swift 3: 4
+"👱🏾\u{200D}👩🏽\u{200D}👧🏿\u{200D}👦🏻".count // family + skin tones; in Swift 3: 8
+"👩🏻‍🚒".count // person + skin tone + profession; in Swift 3: 3
+"🇨🇺🇬🇫🇱🇨".count // multiple flags; in Swift 3: 1
 
 /*:
  ### `Character.unicodeScalars` property
