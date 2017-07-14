@@ -67,4 +67,6 @@ let decodedHand = try decoder.decode([Card].self, from: jsonData)
 type(of: decodedHand)
 assert(decodedHand == hand)
 
-/*: [Table of contents](Table%20of%20contents) • [Previous page](@previous) • [Next page](@next) */
+/*:
+ [Table of contents](Table%20of%20contents) • [Previous page](@previous) • [Next page](@next)
+ */

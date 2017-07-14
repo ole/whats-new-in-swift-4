@@ -19,4 +19,7 @@ var numbers = [1,2,3,4,5]
 // This is the new way to do this:
 numbers.swapAt(0,1)
 numbers
-/*: [Table of contents](Table%20of%20contents) • [Previous page](@previous) • [Next page](@next) */
+
+/*:
+ [Table of contents](Table%20of%20contents) • [Previous page](@previous) • [Next page](@next)
+ */

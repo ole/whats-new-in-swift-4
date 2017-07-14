@@ -81,4 +81,6 @@ let contacts = ["Julia", "Susan", "John", "Alice", "Alex"]
 let grouped = Dictionary(grouping: contacts, by: { $0.first! })
 grouped
 
-/*: [Table of contents](Table%20of%20contents) • [Previous page](@previous) • [Next page](@next) */
+/*:
+ [Table of contents](Table%20of%20contents) • [Previous page](@previous) • [Next page](@next)
+ */

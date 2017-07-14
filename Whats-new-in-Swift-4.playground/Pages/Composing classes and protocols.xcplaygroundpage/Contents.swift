@@ -33,4 +33,6 @@ extension NSImageView: HeaderView {}
 
 ViewController(header: NSImageView()) // works
 
-/*: [Table of contents](Table%20of%20contents) • [Previous page](@previous) */
+/*:
+ [Table of contents](Table%20of%20contents) • [Previous page](@previous)
+ */

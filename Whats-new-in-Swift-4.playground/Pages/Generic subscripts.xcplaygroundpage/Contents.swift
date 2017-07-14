@@ -46,4 +46,6 @@ extension Collection {
 let words = "Lorem ipsum dolor sit amet".split(separator: " ")
 words[indices: [1,2]]
 
-/*: [Table of contents](Table%20of%20contents) • [Previous page](@previous) • [Next page](@next) */
+/*:
+ [Table of contents](Table%20of%20contents) • [Previous page](@previous) • [Next page](@next)
+ */

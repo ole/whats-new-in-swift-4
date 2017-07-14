@@ -55,4 +55,6 @@ extension MutableCollection {
  [SE-0157]: https://github.com/apple/swift-evolution/blob/master/proposals/0157-recursive-protocol-constraints.md
  */
 
-/*: [Table of contents](Table%20of%20contents) • [Previous page](@previous) • [Next page](@next) */
+/*:
+ [Table of contents](Table%20of%20contents) • [Previous page](@previous) • [Next page](@next)
+ */

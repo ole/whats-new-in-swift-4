@@ -41,5 +41,7 @@ class MyClass2 : NSObject {
 
  Since `dynamic` is currently implemented in terms of the Objective-C runtime, this means all current usages of `dynamic` also have to be `@objc`. While this sounds redundant at the moment, it’s an important step on the way to eventually make `dynamic` a pure Swift feature in a future version of the language.
  */
-/*: [Table of contents](Table%20of%20contents) • [Previous page](@previous) • [Next page](@next) */
+/*:
+ [Table of contents](Table%20of%20contents) • [Previous page](@previous) • [Next page](@next)
+ */
 

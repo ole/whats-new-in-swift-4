@@ -94,4 +94,6 @@ observation.invalidate()
 // This doesn't trigger the KVO handler anymore
 mia.celebrateBirthday()
 
-/*: [Table of contents](Table%20of%20contents) • [Previous page](@previous) • [Next page](@next) */
+/*:
+ [Table of contents](Table%20of%20contents) • [Previous page](@previous) • [Next page](@next)
+ */

@@ -113,4 +113,6 @@ attributesNSRange
 let attributesRange = Range(attributesNSRange, in: string)!
 string[attributesRange]
 
-/*: [Table of contents](Table%20of%20contents) • [Previous page](@previous) • [Next page](@next) */
+/*:
+ [Table of contents](Table%20of%20contents) • [Previous page](@previous) • [Next page](@next)
+ */
