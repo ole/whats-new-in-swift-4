@@ -9,7 +9,9 @@
 
  ### `Sequence.Element`
 
- `Sequence` now has its own `Element` associated type. Anywhere you had to write `Iterator.Element` in Swift 3, you can now just write `Element`:
+ `Sequence` now has its own `Element` associated type. This is made possible by the new generics feature because `associatedtype Element where Element == Iterator.Element` can now be expressed in the type system.
+
+ Anywhere you had to write `Iterator.Element` in Swift 3, you can now just write `Element`:
  */
 extension Sequence where Element: Numeric {
     var sum: Element {
@@ -24,22 +26,33 @@ extension Sequence where Element: Numeric {
 [1,2,3,4].sum
 
 /*:
- ### Fewer constraints neeeded when extending `Sequence` and `Collection`
+ Another example: In Swift 3, this extension required more constraints because the type system could not express the idea that the elements of `Collection`’s associated `Indices` type had the same type as `Collection.Index`:
+
+     // Required in Swift 3
+     extension MutableCollection where Index == Indices.Iterator.Element {
  */
-// In Swift 3, this extension required more constraints:
-//extension Sequence where Iterator.Element: Equatable,
-//    SubSequence: Sequence,
-//    SubSequence.Iterator.Element == Iterator.Element
-//
-// In Swift 4, two of the three constraints are already known to the compiler because they can be expressed in the type system using where clauses for associated types.
-extension Sequence where Element: Equatable {
-    func headMirrorsTail(_ n: Int) -> Bool {
-        let head = prefix(n)
-        let tail = suffix(n).reversed()
-        return head.elementsEqual(tail)
+extension MutableCollection {
+    /// Maps over the elements in the collection in place, replacing the existing
+    /// elements with their transformed values.
+    mutating func mapInPlace(_ transform: (Element) throws -> Element) rethrows {
+        for index in indices {
+            self[index] = try transform(self[index])
+        }
     }
 }
 
-[1,2,3,4,2,1].headMirrorsTail(2)
+/*:
+ ## More generics features
+ 
+ Two more important generics improvements have been accepted for Swift 4, but aren’t implemented yet:
+
+ * [SE-0143 Conditional protocol conformances][SE-0143]
+ * [SE-0157 Recursive protocol constraints][SE-0157]
+
+ It looks like recursive constraints will still make it into Swift 4, whereas SE-0143 won’t make the cut.
+
+ [SE-0143]: https://github.com/apple/swift-evolution/blob/master/proposals/0143-conditional-conformances.md
+ [SE-0157]: https://github.com/apple/swift-evolution/blob/master/proposals/0157-recursive-protocol-constraints.md
+ */
 
 /*: [Table of contents](Table%20of%20contents) • [Previous page](@previous) • [Next page](@next) */
