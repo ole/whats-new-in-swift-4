@@ -50,4 +50,48 @@ book[keyPath: nameKeyPath]
 //book[keyPath: \Book.authors[0].name]
 // error: key path support for subscript components is not implemented
 
+/*:
+ ### Type-safe KVO with key paths
+
+ The key-value observing API in Foundation has been revamped to take full advantage of the new type-safe key paths. It is much easier to use than the old API.
+
+ Notice that KVO depends on the Objective-C runtime. It only works in subclasses of `NSObject`, and any observable property must be declared with `@objc dynamic`.
+ */
+import Foundation
+
+class Child: NSObject {
+    let name: String
+    // KVO-enabled properties must be @objc dynamic
+    @objc dynamic var age: Int
+
+    init(name: String, age: Int) {
+        self.name = name
+        self.age = age
+        super.init()
+    }
+
+    func celebrateBirthday() {
+        age += 1
+    }
+}
+
+// Set up KVO
+let mia = Child(name: "Mia", age: 5)
+let observation = mia.observe(\.age, options: [.initial, .old]) { (child, change) in
+    if let oldValue = change.oldValue {
+        print("\(child.name)’s age changed from \(oldValue) to \(child.age)")
+    } else {
+        print("\(child.name)’s age is now \(child.age)")
+    }
+}
+
+// Trigger KVO (see output in the console)
+mia.celebrateBirthday()
+
+// Deiniting or invalidating the observation token ends the observation
+observation.invalidate()
+
+// This doesn't trigger the KVO handler anymore
+mia.celebrateBirthday()
+
 /*: [Table of contents](Table%20of%20contents) • [Previous page](@previous) • [Next page](@next) */
