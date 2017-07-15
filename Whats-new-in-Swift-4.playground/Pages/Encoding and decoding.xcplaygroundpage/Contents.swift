@@ -46,7 +46,7 @@ import Foundation
 var encoder = JSONEncoder()
 
 // Optional properties offered by JSONEncoder for customizing output
-encoder.outputFormatting = [.prettyPrinted]
+encoder.outputFormatting = [.prettyPrinted] // another option: .sortedKeys
 encoder.dataEncodingStrategy
 encoder.dateEncodingStrategy
 encoder.nonConformingFloatEncodingStrategy
