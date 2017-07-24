@@ -7,7 +7,7 @@
 
  [SE-0171]: https://github.com/apple/swift-evolution/blob/master/proposals/0171-reduce-with-inout.md "Swift Evolution Proposal SE-0171: Reduce with `inout`"
  
- SE-0171 is not implemented yet.
+ SE-0171 has recently been implemented, but it hasn’t landed in Xcode 9 yet.
  */
 // Not implemented yet
 //extension Sequence where Element: Equatable {
