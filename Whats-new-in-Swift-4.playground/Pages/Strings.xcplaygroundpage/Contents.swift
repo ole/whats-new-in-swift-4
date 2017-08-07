@@ -12,10 +12,26 @@
 let multilineString = """
     This is a multi-line string.
     You don't have to escape "quotes" in here.
+    String interpolation works as expected: 2 + 3 = \(2 + 3)
     The position of the closing delimiter
       controls whitespace stripping.
     """
 print(multilineString)
+print("---")
+
+/*:
+ ### Escaping newlines in string literals
+
+ [SE-0182][SE-0182] adds the ability to escape newlines in multi-line string literals with a backslash at the end of the line.
+
+ [SE-0182]: https://github.com/apple/swift-evolution/blob/master/proposals/0182-newline-escape-in-strings.md "Swift Evolution Proposal SE-0182: String Newline Escaping"
+*/
+let escapedNewline = """
+    To omit a line break, \
+    add a backslash at the end of a line.
+    """
+print(escapedNewline)
+print("---")
 
 /*:
  Activate Xcode’s Console (_View > Debug Area > Activate Console_) to see the `print` output.
@@ -35,6 +51,7 @@ greeting.count
 for char in greeting {
     print(char)
 }
+print("---")
 
 /*:
  ### `Substring` is the new type for string slices
@@ -46,6 +63,7 @@ let substring = greeting[..<comma]
 type(of: substring)
 // Most String APIs can be called on Substring
 print(substring.uppercased())
+print("---")
 
 /*:
  A `Substring` keeps the full `String` value it was created from alive. This can lead to accidental high memory usage when you pass a seemingly small `Substring` that holds on to a large `String` to other API. For this reason, most functions that take a string as an argument should continue to accept only `String` instances; you generally should not make such functions generic to accept any value conforming to `StringProtocol`.
