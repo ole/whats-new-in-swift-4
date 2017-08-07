@@ -59,7 +59,7 @@ result.low
 
  The new `DoubleWidth<T>` type is supposed to make it possible to create wider fixed-width integer types from the ones available in the standard library. It didn't work in my tests yet, however.
  */
-//var veryBigNumber = DoubleWidth<Int64>(Int64.max) // EXC_BAD_INSTRUCTION
+//var veryBigNumber = DoubleWidth<Int64>(Int64.max) // error: Use of unresolved identifier 'DoubleWidth'
 //veryBigNumber + 1
 
 /*:
