@@ -3,7 +3,7 @@
  
  By [Ole Begemann][Ole Begemann] • May 2017
  
- Latest version tested: **Xcode 9 beta 4 from July 24, 2017**
+ Latest version tested: **Xcode 9 beta 5 from August 7, 2017**
  
  [Ole Begemann]: https://oleb.net
  
