@@ -39,8 +39,8 @@ print("---")
  ### String is a `Collection` again
 
  [SE-0163][SE-0163] is the first part of the revised string model for Swift 4. The biggest change is that `String` is a `Collection` again (as it used to be in Swift 1.x), i.e. the functionality of `String.CharacterView` has been folded into the parent type. (The other views, `UnicodeScalarView`, `UTF8View`, and `UTF16View`, still exist.)
- 
- Note that SE-0163 isn’t fully implemented yet and there are a few more string-related proposals in the pipeline, such as an internal redesign of the `String.Index` type ([SE-0180][SE-0180]).
+
+ Another string-related change is a redesign of the `String.Index` type ([SE-0180][SE-0180])
 
  [SE-0163]: https://github.com/apple/swift-evolution/blob/master/proposals/0163-string-revision-1.md "Swift Evolution Proposal SE-0163: String Revision: Collection Conformance, C Interop, Transcoding"
  [SE-0180]: https://github.com/apple/swift-evolution/blob/master/proposals/0180-string-index-overhaul.md "Swift Evolution Proposal SE-0180: String Index Overhaul"
@@ -74,6 +74,8 @@ let newString = String(substring)
 type(of: newString)
 
 /*:
+ [SE-0183](https://github.com/apple/swift-evolution/blob/master/proposals/0183-substring-affordances.md) changes a few standard library APIs to work on `StringProtocol` rather than `String`. The goal is to avoid unnecessary copies since these APIs are commonly used with slices of a string.
+
  ### Unicode 9
  
  Swift 4 supports Unicode 9, fixing [some problems with proper grapheme clustering for modern emoji][Emoji 4.0]. All the character counts below are now correct (they weren’t in Swift 3):
