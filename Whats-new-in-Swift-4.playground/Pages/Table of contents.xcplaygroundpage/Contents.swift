@@ -1,9 +1,9 @@
 /*:
  # What’s new in Swift 4
  
- By [Ole Begemann][Ole Begemann] • May 2017
+ By [Ole Begemann][Ole Begemann] • May–September 2017
  
- Latest version tested: **Xcode 9 beta 5 from August 7, 2017**
+ Latest version tested: **Xcode 9 beta 6 from August 21, 2017**
  
  [Ole Begemann]: https://oleb.net
  
