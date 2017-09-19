@@ -3,7 +3,7 @@
  
  By [Ole Begemann][Ole Begemann] • May–September 2017
  
- Latest version tested: **Xcode 9 beta 6 from August 21, 2017**
+ Latest version tested: **Xcode 9.0 from September 19, 2017**
  
  [Ole Begemann]: https://oleb.net
  
@@ -27,7 +27,9 @@
 
  ## Instructions
 
- This playground requires Swift 4. Xcode 9 includes Swift 4 by default ([download Xcode 9 beta from developer.apple.com](https://developer.apple.com/download/))). You can also run it in Xcode 8.3, but you need to install a Swift 4 toolchain (don’t worry, it’s easy):
+ This playground requires Swift 4. [Xcode](https://developer.apple.com/xcode/) 9 includes Swift 4 by default.
+
+ You can also run it in Xcode 8.3, but you need to install a Swift 4 toolchain (don’t worry, it’s easy):
 
  1. Download [the latest Swift 4.0 snapshot from swift.org](https://swift.org/download/#snapshots).
  1. Run the installer to install the snapshot.

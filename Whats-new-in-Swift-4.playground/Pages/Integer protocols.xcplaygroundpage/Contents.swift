@@ -3,7 +3,7 @@
 
  ## New integer protocols
 
- [SE-0104][SE-0104] was originally accepted for Swift 3, but didnʼt make the cut. Now a slightly revised version is coming in Swift 4. “This proposal cleans up Swifts integer APIs and makes them more useful for generic programming.”
+ [SE-0104][SE-0104] was originally accepted for Swift 3, but didnʼt make it in then. Now a slightly revised version is coming in Swift 4. “This proposal cleans up Swifts integer APIs and makes them more useful for generic programming.”
 
  [SE-0104]: https://github.com/apple/swift-evolution/blob/master/proposals/0104-improved-integers.md "Swift Evolution Proposal SE-0104: Protocol-oriented integers"
 
@@ -57,7 +57,7 @@ result.low
 /*:
  ### `DoubleWidth`
 
- The new `DoubleWidth<T>` type is supposed to make it possible to create wider fixed-width integer types from the ones available in the standard library. It didn't work in my tests yet, however.
+ The new `DoubleWidth<T>` type is supposed to make it possible to create wider fixed-width integer types from the ones available in the standard library. It's implemented in the Swift master branch, but isn't included in Swift 4.0. Expect it to be part of the next point release.
  */
 //var veryBigNumber = DoubleWidth<Int64>(Int64.max) // error: Use of unresolved identifier 'DoubleWidth'
 //veryBigNumber + 1
@@ -65,4 +65,3 @@ result.low
 /*:
  [Table of contents](Table%20of%20contents) • [Previous page](@previous) • [Next page](@next)
  */
-

@@ -45,8 +45,9 @@ book[keyPath: nameKeyPath]
 /*:
  ### Key paths for subscripts
  
- Key paths will also work with subscripts. This makes them very convenient to drill down into collections such as arrays or dictionaries. This functionality wasn’t yet implemented in the last version I tested.
+ Part of the key path proposal was that key paths can include subscript segments. This would make them very convenient to drill down into collections, especially dictionaries. Unfortunately, the implementation for subscripts didn't make the cut for Swift 4.0, but it will come in a future release.
  */
+// Not yet possible in Swift 4.0
 //book[keyPath: \Book.authors[0].name]
 // error: key path support for subscript components is not implemented
 

@@ -49,8 +49,6 @@ extension MutableCollection {
  * [SE-0143 Conditional protocol conformances][SE-0143]
  * [SE-0157 Recursive protocol constraints][SE-0157]
 
- It looks like recursive constraints will still make it into Swift 4, whereas conditional conformance won’t make the cut.
-
  [SE-0143]: https://github.com/apple/swift-evolution/blob/master/proposals/0143-conditional-conformances.md
  [SE-0157]: https://github.com/apple/swift-evolution/blob/master/proposals/0157-recursive-protocol-constraints.md
  */
