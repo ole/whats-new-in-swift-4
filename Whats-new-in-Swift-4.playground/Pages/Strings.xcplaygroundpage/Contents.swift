@@ -117,10 +117,10 @@ string[range].count // length in Characters
 assert(nsRange.length == string[range].utf16.count)
 
 // Use the NSRange to format an attributed string
-import AppKit
+import UIKit
 
-let formatted = NSMutableAttributedString(string: string, attributes: [.font: NSFont.systemFont(ofSize: 14)])
-formatted.addAttribute(.font, value: NSFont.systemFont(ofSize: 48), range: nsRange)
+let formatted = NSMutableAttributedString(string: string, attributes: [.font: UIFont.systemFont(ofSize: 14)])
+formatted.addAttribute(.font, value: UIFont.systemFont(ofSize: 48), range: nsRange)
 
 // NSAttributedString APIs return NSRange
 let lastCharacterIndex = string.index(before: string.endIndex)

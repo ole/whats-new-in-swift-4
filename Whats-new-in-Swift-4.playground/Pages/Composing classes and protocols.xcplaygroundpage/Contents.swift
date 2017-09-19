@@ -7,14 +7,14 @@
 
  [SE-0156]: https://github.com/apple/swift-evolution/blob/master/proposals/0156-subclass-existentials.md "Swift Evolution Proposal SE-0156: Class and Subtype existentials"
  */
-import Cocoa
+import UIKit
 
 protocol HeaderView {}
 
-class ViewController: NSViewController {
-    let header: NSView & HeaderView
+class ViewController: UIViewController {
+    let header: UIView & HeaderView
 
-    init(header: NSView & HeaderView) {
+    init(header: UIView & HeaderView) {
         self.header = header
         super.init(nibName: nil, bundle: nil)
     }
@@ -24,14 +24,14 @@ class ViewController: NSViewController {
     }
 }
 
-// Can't pass in a simple NSView that doesn't conform to the protocol
-//ViewController(header: NSView())
-// error: argument type 'NSView' does not conform to expected type 'NSView & HeaderView'
+// Can't pass in a simple UIView that doesn't conform to the protocol
+//ViewController(header: UIView())
+// error: argument type 'UIView' does not conform to expected type 'UIView & HeaderView'
 
 // Must pass in an NSView (subclass) that also conforms to the protocol
-extension NSImageView: HeaderView {}
+extension UIImageView: HeaderView {}
 
-ViewController(header: NSImageView()) // works
+ViewController(header: UIImageView()) // works
 
 /*:
  [Table of contents](Table%20of%20contents) • [Previous page](@previous)
