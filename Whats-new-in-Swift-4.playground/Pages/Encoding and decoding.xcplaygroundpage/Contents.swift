@@ -39,7 +39,7 @@ let hand = [Card(suit: .clubs, rank: .ace), Card(suit: .hearts, rank: .queen)]
 
  [SE-0167]: https://github.com/apple/swift-evolution/blob/master/proposals/0167-swift-encoders.md "Swift Evolution Proposal SE-0167: Swift Encoders"
 
- In its simplest form, encoding is just two lines of code: create and encoder and ask it to encode your value. Most encoders include properties you can set to customize the output.
+ In its simplest form, encoding is just two lines of code: create an encoder and ask it to encode your value. Most encoders include properties you can set to customize the output.
  */
 import Foundation
 
