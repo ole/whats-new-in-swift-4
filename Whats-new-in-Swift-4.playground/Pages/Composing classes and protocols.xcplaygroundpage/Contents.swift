@@ -28,7 +28,7 @@ class ViewController: UIViewController {
 //ViewController(header: UIView())
 // error: argument type 'UIView' does not conform to expected type 'UIView & HeaderView'
 
-// Must pass in an NSView (subclass) that also conforms to the protocol
+// Must pass in an UIView (subclass) that also conforms to the protocol
 extension UIImageView: HeaderView {}
 
 ViewController(header: UIImageView()) // works
