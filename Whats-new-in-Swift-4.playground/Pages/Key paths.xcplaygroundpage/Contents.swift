@@ -45,11 +45,10 @@ book[keyPath: nameKeyPath]
 /*:
  ### Key paths for subscripts
  
- Part of the key path proposal was that key paths can include subscript segments. This would make them very convenient to drill down into collections, especially dictionaries. Unfortunately, the implementation for subscripts didn't make the cut for Swift 4.0, but it will come in a future release.
+ Part of the key path proposal was that key paths can include subscript segments. This would make them very convenient to drill down into collections. The implementation for subscripts didn't make the cut for Swift 4.0, but it's now availble in Swift 4.0.3 (Xcode 9.2).
  */
-// Not yet possible in Swift 4.0
-//book[keyPath: \Book.authors[0].name]
-// error: key path support for subscript components is not implemented
+// Now possible in Swift 4.0.3
+book[keyPath: \Book.authors[0].name]
 
 /*:
  ### Type-safe KVO with key paths
