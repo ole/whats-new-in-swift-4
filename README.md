@@ -4,6 +4,8 @@ An Xcode playground showcasing the new features in Swift 4.0. As seen in the [Wh
 
 Written by [Ole Begemann][Ole Begemann], May–September 2017.
 
+See also: my [What’s new in Swift 4.2 playground](https://github.com/ole/whats-new-in-swift-4-2) from 2018.
+
 The playground requires Swift 4. [Xcode](https://developer.apple.com/xcode/) 9 includes Swift 4 by default.
 
 You can also run it in Xcode 8.3, but you need to install [the latest Swift 4.0 snapshot from swift.org][Snapshot downloads] (don’t worry, it’s easy).
